@@ -1,4 +1,4 @@
-FROM maven:3.9.11-eclipse-temurine-17-alpine AS build
+FROM maven:3.9.11-eclipse-temurin-17-alpine AS build
 ADD . /Appjava
 WORKDIR /Appjava
 RUN mvn package -DskipTests
