@@ -3,7 +3,7 @@ ADD . /Appjava
 WORKDIR /Appjava
 RUN mvn package -DskipTests
 
-FROM eclipse-temurine:25-36-jdk AS runtime
+FROM eclipse-temurin:17-jre AS runtime
 COPY --from=build /Appjava/target/*.jar /devops/spring.jar
 WORKDIR /devops
 EXPOSE 8080
