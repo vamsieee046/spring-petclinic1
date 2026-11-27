@@ -1,7 +1,7 @@
 FROM maven:3.9.11-eclipse-temurin-17-alpine AS build
 ADD . /Appjava
 WORKDIR /Appjava
-RUN mvn package -DskipTests
+#RUN mvn package -DskipTests
 
 FROM eclipse-temurin:17-jre AS runtime
 COPY --from=build /Appjava/target/*.jar /devops/spring.jar
